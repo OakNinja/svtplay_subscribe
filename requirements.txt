@@ -1,0 +1,6 @@
+feedparser
+requests>=2.0.0
+pyOpenSSL
+ndg-httpsclient
+pyasn1
+svtplay-dl
