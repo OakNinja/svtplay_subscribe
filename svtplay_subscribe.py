@@ -69,8 +69,8 @@ class Subscriber:
                 downloaded.append({"id": stream_id.group(1), "title": title})
         f = open(self.home + '/' + 'svt_downloaded', 'a+')
         for item in downloaded:
-            print>>f, item["title"]
-            print('\nDownloaded ' + item["id"])
+            print>>f, item["id"]
+            print('\nDownloaded ' + item["title"])
         f.close()
 
     def run(self):
