@@ -64,9 +64,8 @@ class Subscriber:
             options.output = self.home + '/Movies/' + title + '.mp4'
             print("\nDownloading item {}".format(title))
             svtplay_dl.get_media(item.link, options)
-            stream_id = self.url_pattern.search(item.link)
-            if stream_id:
-                downloaded.append({"id": stream_id.group(1), "title": title})
+            downloaded.append({"id": parsed_url.group(1), "title": title})
+
         f = open(self.home + '/' + 'svt_downloaded', 'a+')
         for item in downloaded:
             print>>f, item["id"]
