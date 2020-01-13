@@ -4,3 +4,4 @@ pyOpenSSL
 ndg-httpsclient
 pyasn1
 svtplay-dl
+beautifulsoup4

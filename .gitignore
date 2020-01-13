@@ -1,0 +1,9 @@
+/tests/test_keywords.txt
+/tests/search_terms.txt
+*.mp4
+downloaded.txt
+svt_downloaded
+svt_keywords
+venv/
+.idea/
+.DS_Store

@@ -3,16 +3,17 @@
 #### Requirements:
 * OSX
 * Python
+* brew install ffmpeg
 
 #### Setup:
 * pip install -r requirements.txt
 * python svtplay_subscribe.py
 
 #### Set up keywords:
-Edit the file svt_keywords located in user home (*~/*) and add keywords separated by newlines, ex: <br/>
-*daniel*<br/>
+Edit the file search_terms located in the application folder and add keywords separated by newlines, ex: <br/>
+*daniel tiger*<br/>
 *pippi*<br/>
 *ronja*<br/>
 
 #### Run:
-python svtplay_subscribe.py
+SvtPlaySubscriber.download()
