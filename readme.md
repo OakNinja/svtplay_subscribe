@@ -14,4 +14,6 @@ Edit the file search_terms located in the application folder and add keywords se
 *ronja*<br/>
 
 #### Run:
-SvtPlaySubscriber.download()
+```shell
+python svt_scraper.py
+```

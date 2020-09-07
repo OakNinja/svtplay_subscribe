@@ -45,17 +45,26 @@ class SvtPlaySubscriber:
         return matching_episodes
 
     def get_downloaded_episodes(self):
-        with open(self.config.downloaded_file) as f:
-            return f.read().splitlines()
+        try:
+            with open(self.config.downloaded_file) as f:
+                return f.read().splitlines()
+        except FileNotFoundError:
+            return []
 
     def download(self):
         episodes = self.get_episodes_matching_search_terms()
         downloaded_episodes = self.get_downloaded_episodes()
         episodes = [episode for episode in episodes if episode not in downloaded_episodes]
-        for episode in episodes:
+        for episode in sorted(episodes):
             try:
                 svtplay_dl.get_media(f'{self.config.svt_video_base_url}{episode}', self.options)
+            except KeyboardInterrupt:
+                exit(1)
             except:
                 print('ERROR!!!!111one')
             with open(self.config.downloaded_file, 'a') as f:
                 f.write(f'{episode}' + '\n')
+                
+                
+if __name__ == '__main__':
+    SvtPlaySubscriber().download()

@@ -7,3 +7,6 @@ svt_keywords
 venv/
 .idea/
 .DS_Store
+*.ts
+__pycache__
+.temp
