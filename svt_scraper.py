@@ -25,8 +25,8 @@ class SvtPlaySubscriber:
 
     def get_episodes_matching_search_terms(self):
         svt_program_page = requests.get(self.config.svt_all_shows_page).text
-        soup = BeautifulSoup(svt_program_page, 'html.parser')
-        shows = soup.find_all('a', {'class': 'play_link-list__link'})
+        soup = BeautifulSoup(svt_program_page, 'html.parser', multi_valued_attributes=None)
+        shows = [x for x in soup.find_all('a') if 'ListItemLink' in x['class']]
         matched_shows = []
 
         for show in shows:
